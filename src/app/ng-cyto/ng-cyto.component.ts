@@ -15,7 +15,7 @@ declare var cytoscape: any;
 })
 
 
-export class NgCyto implements OnChanges {
+export class NgCytoComponent implements OnChanges {
 
     @Input() public elements: any;
     @Input() public style: any;
@@ -38,7 +38,7 @@ export class NgCyto implements OnChanges {
             };
 
         this.style = this.style || cytoscape.stylesheet()
-               
+
             .selector('node')
             .css({
                 'shape': 'data(shapeType)',
@@ -87,7 +87,7 @@ export class NgCyto implements OnChanges {
       let cy_contianer = this.renderer.selectRootElement("#cy");
       let localselect = this.select;
       let cy = cytoscape({
-            container : cy_contianer, 
+            container : cy_contianer,
             layout: this.layout,
             minZoom: this.zoom.min,
             maxZoom: this.zoom.max,
@@ -97,16 +97,16 @@ export class NgCyto implements OnChanges {
 
 
         cy.on('tap', 'node', function(e) {
-            var node = e.cyTarget;
+            var node = e.target;
             var neighborhood = node.neighborhood().add(node);
 
             cy.elements().addClass('faded');
             neighborhood.removeClass('faded');
-            localselect.emit(node.data("name"));
+            localselect.emit(node.data('name'));
         });
 
         cy.on('tap', function(e) {
-                if (e.cyTarget === cy) {
+                if (e.target === cy) {
                     cy.elements().removeClass('faded');
                 }
         });

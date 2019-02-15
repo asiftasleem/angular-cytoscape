@@ -5,12 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { GraphComponent } from './graph/graph.component';
 import { AppComponent } from './app.component';
-import {NgCyto} from './ng-cyto/ng-cyto.directive';
+import {NgCytoComponent} from './ng-cyto/ng-cyto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NgCyto,
+    NgCytoComponent,
     GraphComponent
   ],
   imports: [
