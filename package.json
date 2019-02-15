@@ -1,13 +1,18 @@
 {
   "name": "ng-2-cytoscape",
   "version": "0.0.0",
+  "engines": {
+    "node": "v11.9.0",
+    "npm": "6.5.0"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --output-path angularapp  --aot --prod"
   },
   "private": true,
   "dependencies": {
@@ -22,8 +27,11 @@
     "core-js": "^2.5.4",
     "cytoscape": "^3.2.0",
     "cytoscape-dagre": "^2.2.2",
+    "express": "^4.16.4",
+    "path": "^0.12.7",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
+    "typescript": "~3.2.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
