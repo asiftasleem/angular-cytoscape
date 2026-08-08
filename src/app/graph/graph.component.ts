@@ -2,6 +2,7 @@ import {Component, Output, EventEmitter} from "@angular/core";
 
 @Component({
     selector: 'cy-graph',
+    standalone: false,
     templateUrl: './graph.component.html',
     styles: [`
       ng2-cytoscape {
@@ -14,7 +15,7 @@ import {Component, Output, EventEmitter} from "@angular/core";
 
 export class GraphComponent {
 
-    node_name: string;
+    node_name = '';
 
     layout = {
                 name: 'dagre',
@@ -48,7 +49,7 @@ export class GraphComponent {
     constructor() {
     }
 
-    nodeChange(event) {
+    nodeChange(event: string): void {
         this.node_name = event;
     }
 

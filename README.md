@@ -1,6 +1,6 @@
-# Angular 7 Cytoscape Dagre Demo
+# Angular 22 Cytoscape Dagre Demo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
+This project uses [Angular CLI](https://github.com/angular/angular-cli) version 22.
 
 ## Development server
 
@@ -12,16 +12,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `npm run build` to build the production application. Build artifacts are stored in `angularapp/browser`.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+Run `npm test` to execute the unit tests via [Vitest](https://vitest.dev/).
 
 ## Further help
 
