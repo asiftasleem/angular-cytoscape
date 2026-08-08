@@ -1,9 +1,10 @@
-import {Component, OnChanges, Renderer, ElementRef, Input, Output, EventEmitter} from '@angular/core';
+import {Component, OnChanges, Renderer2, ElementRef, Input, Output, EventEmitter} from '@angular/core';
 
 declare var cytoscape: any;
 
 @Component({
     selector: 'ng2-cytoscape',
+    standalone: false,
     template: '<div id="cy"></div>',
     styles: [`#cy {
         height: 100%;
@@ -24,7 +25,7 @@ export class NgCytoComponent implements OnChanges {
 
     @Output() select: EventEmitter<any> = new EventEmitter<any>();
 
-    public constructor(private renderer : Renderer, private el: ElementRef) {
+    public constructor(private renderer : Renderer2, private el: ElementRef) {
 
         this.layout = this.layout || {
                 name: 'grid',
@@ -96,7 +97,7 @@ export class NgCytoComponent implements OnChanges {
         });
 
 
-        cy.on('tap', 'node', function(e) {
+        cy.on('tap', 'node', function(e: any) {
             var node = e.target;
             var neighborhood = node.neighborhood().add(node);
 
@@ -105,7 +106,7 @@ export class NgCytoComponent implements OnChanges {
             localselect.emit(node.data('name'));
         });
 
-        cy.on('tap', function(e) {
+        cy.on('tap', function(e: any) {
                 if (e.target === cy) {
                     cy.elements().removeClass('faded');
                 }

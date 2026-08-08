@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
 import { GraphComponent } from './graph/graph.component';
 import { AppComponent } from './app.component';
@@ -15,8 +14,7 @@ import {NgCytoComponent} from './ng-cyto/ng-cyto.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
